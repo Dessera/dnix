@@ -12,7 +12,7 @@ in
 
   config = mkIf cfg.enable {
     catppuccin = {
-      accent = "mauve";
+      accent = "maroon";
       flavor = "mocha";
     };
   };

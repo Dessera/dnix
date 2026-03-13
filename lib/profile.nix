@@ -1,4 +1,8 @@
-{ inputs, lib }:
+{
+  inputs,
+  lib,
+  overlays,
+}:
 
 {
   mkProfile =
@@ -39,6 +43,7 @@
 
           nixpkgs.overlays = with inputs; [
             nix-vscode-extensions.overlays.default
+            overlays.default
           ];
 
           home-manager = {

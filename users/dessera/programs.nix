@@ -15,7 +15,7 @@
 
   home.packages = with pkgs; [
     qq
-    wechat
+    wechat-uos
 
     copier
     cachix
@@ -32,7 +32,7 @@
 
     dix
 
-    # Global Utils for Convinience
+    # Global Utils for Convenience
     python3
     nodejs
   ];

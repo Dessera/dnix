@@ -13,7 +13,6 @@ in
     };
 
     programs = {
-      fuzzel.enable = true;
       wezterm.enable = true;
     };
   };

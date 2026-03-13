@@ -18,8 +18,14 @@ in
   config = mkIf cfg.enable {
     stylix = {
       enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-      image = ../../../assets/noshared/83050349_p0.png;
+
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/windows-10.yaml";
+      override = {
+        base0D = "#B05D48";
+      };
+
+      image = ../../../assets/noshared/127379128_p0.jpg;
+
       icons = {
         enable = true;
         package = pkgs.papirus-icon-theme;

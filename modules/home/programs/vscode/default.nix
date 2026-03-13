@@ -64,7 +64,7 @@ let
     ]);
 
   commonSettings = (loadUserSettings ./settings.json) // {
-    "workbench.colorTheme" = lib.mkForce "Bearded Theme feat. Will";
+    "workbench.colorTheme" = lib.mkForce "Bearded Theme Black & Gold";
   };
 in
 {

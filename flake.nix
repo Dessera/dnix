@@ -60,11 +60,13 @@
         lib = nixpkgs.lib.extend (
           self: super: {
             dnix = import ./lib {
-              inherit inputs;
+              inherit inputs overlays;
               lib = self;
             };
           }
         );
+
+        overlays = import ./overlays;
 
         nixosModules = {
           default = import ./modules/nixos;

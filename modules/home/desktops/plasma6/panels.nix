@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (lib) types mkIf;
@@ -20,76 +25,38 @@ in
   config = mkIf cfg.enable {
     programs.plasma.panels = [
       {
-        location = "top";
-        floating = false;
-        hiding = "none";
-        lengthMode = "fill";
-        height = 40;
+        location = "bottom";
+        hiding = "dodgewindows";
+        lengthMode = "fit";
+        height = 64;
         screen = 0;
         widgets = [
           {
-            kicker = {
+            name = "AndromedaLauncher";
+            config.General = {
+              favoritesPortedToKAstats = true;
+              floating = true;
               icon = "nix-snowflake";
+              launcherPosition = 1;
+              pinnedModel = 1;
+              useCustomButtonImage = false;
+              useSystemFontSettings = true;
             };
           }
           {
-            applicationTitleBar = {
-              behavior = {
-                activeTaskSource = "activeTask";
-              };
-              layout = {
-                elements = [
-                  "windowCloseButton"
-                  "windowMaximizeButton"
-                  "windowMinimizeButton"
-                  "windowTitle"
-                ];
-                horizontalAlignment = "left";
-                showDisabledElements = "deactivated";
-                verticalAlignment = "center";
-              };
-              windowTitle = {
-                font.bold = true;
-                hideEmptyTitle = true;
-                undefinedWindowTitle = "Blank";
-                margins = {
-                  bottom = 0;
-                  left = 10;
-                  right = 5;
-                  top = 0;
-                };
-                source = "appName";
-              };
+            iconTasks = {
+              launchers = dockApps;
+              iconsOnly = false;
+              appearance.iconSpacing = "small";
             };
           }
           {
-            plasmusicToolbar = {
-              settings = {
-                General = {
-                  showWhenNoMedia = true;
-                  noMediaText = "";
-                };
+            plasmaPanelColorizer = {
+              settings.General = {
+                hideWidget = true;
+                presetAutoloading = "{\"enabled\":true,\"normal\":\"${pkgs.plasma-panel-colorizer}/share/plasma/plasmoids/luisbocanegra.panel.colorizer/contents/ui/presets/ChromeOS\"}";
               };
             };
-          }
-          {
-            panelSpacer = { };
-          }
-          {
-            digitalClock = {
-              date = {
-                enable = true;
-                position = "besideTime";
-                format = "isoDate";
-              };
-              calendar = {
-                showWeekNumbers = true;
-                plugins = [ "holidaysevents" ];
-              };
-            };
-          }
-          {
-            panelSpacer = { };
           }
           {
             systemTray = {
@@ -107,24 +74,23 @@ in
               };
             };
           }
-        ];
-      }
-      {
-        location = "bottom";
-        floating = true;
-        hiding = "dodgewindows";
-        lengthMode = "fit";
-        height = 64;
-        screen = 0;
-        widgets = [
           {
-            iconTasks = {
-              launchers = dockApps;
-              appearance.iconSpacing = "small";
+            digitalClock = {
+              date = {
+                enable = false;
+              };
+              calendar = {
+                showWeekNumbers = true;
+                plugins = [ "holidaysevents" ];
+              };
             };
           }
         ];
       }
+    ];
+
+    home.packages = with pkgs; [
+      plasma-widgets.andromeda-launcher
     ];
   };
 }

@@ -76,7 +76,6 @@ in
           packages = with pkgs.nur.repos.rycee.firefox-addons; [
             plasma-integration
             tabliss
-            darkreader
             to-deepl
           ];
         };

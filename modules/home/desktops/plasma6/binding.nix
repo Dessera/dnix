@@ -18,8 +18,8 @@ in
             key = "Ctrl+Alt+T";
           };
           launcher = {
-            command = "fuzzel";
-            comment = "Run fuzzel app launcher";
+            command = "krunner";
+            comment = "Run application launcher";
             key = "Alt+Space";
           };
         };

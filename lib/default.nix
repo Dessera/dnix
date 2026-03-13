@@ -1,4 +1,8 @@
-{ inputs, lib }@args:
+{
+  inputs,
+  lib,
+  overlays,
+}@args:
 
 rec {
   # Profile Utils

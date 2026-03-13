@@ -31,6 +31,8 @@ in
     programs.plasma = {
       enable = true;
       session.sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
+
+      workspace.iconTheme = "Papirus-Dark";
     };
 
     stylix.targets.qt.enable = false;
