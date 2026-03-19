@@ -90,6 +90,22 @@
               homeModules.default
             ];
           };
+
+          dessera-lenovo = lib.dnix.profile.mkProfile {
+            name = "dessera-lenovo";
+            system = "x86_64-linux";
+            modules = [
+              inputs.nixos-hardware.nixosModules.common-cpu-intel
+              inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+              inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+              nixosModules.default
+              ./hosts/dessera-lenovo
+              ./users/dessera
+            ];
+            homeModules = [
+              homeModules.default
+            ];
+          };
         };
       };
 

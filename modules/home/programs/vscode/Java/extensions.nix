@@ -5,7 +5,6 @@
 }:
 
 (with vscode-marketplace; [
-  redhat.java
   vscjava.vscode-java-pack
   vscjava.vscode-java-test
   vscjava.vscode-maven
@@ -16,5 +15,6 @@
   daplf.vscode-java-kotlin
 ])
 ++ (with vscode-extensions; [
+  redhat.java
   vscjava.vscode-java-debug
 ])
