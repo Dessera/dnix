@@ -77,6 +77,7 @@ in
             plasma-integration
             tabliss
             to-deepl
+            tampermonkey
           ];
         };
 

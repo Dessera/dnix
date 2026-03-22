@@ -58,7 +58,7 @@ let
       mkhl.direnv
       smcpeak.default-keys-windows
     ]
-    ++ (with pkgs.vscode-marketplace-release; [
+    ++ (with pkgs.vscode-extensions; [
       # AI Agent
       github.copilot-chat
     ]);
