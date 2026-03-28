@@ -32,6 +32,8 @@
 
     dix
 
+    qtscrcpy
+
     # Global Utils for Convenience
     python3
     nodejs
