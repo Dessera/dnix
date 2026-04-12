@@ -57,7 +57,6 @@ let
       gruntfuggly.todo-tree
       mkhl.direnv
       smcpeak.default-keys-windows
-
     ]
     ++ (with pkgs.vscode-marketplace-release; [
       # AI Agent
